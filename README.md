@@ -89,7 +89,7 @@ The project was done with Python with ANTLR
 
 - Python
 - ANTLR 
-- VS Code
+- PyCharm CE
 
 💬 Fale comigo
 ------------------
