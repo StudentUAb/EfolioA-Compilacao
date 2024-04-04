@@ -1,0 +1,8 @@
+# Este é um exemplo de programa MONTy Python válido.
+
+int x = 10;
+float y = 20.5;
+x = x + 1;
+y = y - x;
+print(x);
+print(y);

@@ -1,0 +1,7 @@
+# Este é um exemplo de programa MONTy Python com erros.
+
+int x = 10.5;  
+float y = 20;
+x = x ++ 1;  
+y = y - ;  
+print(x ;  
