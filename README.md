@@ -1,33 +1,3 @@
-# MONTy Python Interpreter
-
-Este é um interpretador para a linguagem de programação MONTy Python, utilizando ANTLR4 para gerar a análise léxica e sintática.
-
-## Pré-requisitos
-
-Antes de começar, certifique-se de ter o ANTLR4 e Python 3 instalados no seu sistema.
-
-## Configuração
-
-Para gerar os analisadores léxico e sintático, siga os seguintes passos:
-
-1. Navegue até o diretório que contém o arquivo `MONTyPython.g4`.
-2. Execute o seguinte comando:
-
-   ```shell
-   antlr4 MONTyPython.g4 -Dlanguage=Python3 -visitor
-
-Após executar o comando, os arquivos MONTyPythonLexer.py, MONTyPythonParser.py, e MONTyPythonVisitor.py serão gerados.
-
-Para executar um programa MONTy Python sem erros:
-
-python3 parse_monty.py example.mtp
-Este comando analisa o arquivo example.mtp, que deve ser um programa MONTy Python válido, e executa o código, mostrando a saída do programa no terminal.
-Para executar um programa MONTy Python com erros intencionais:
-
-python3 parse_monty.py example_error.mtp
-
-
-
 <h1 align="center">
     <img width="400" src="antlr.png" />
 </h1>
@@ -83,7 +53,37 @@ Executamos os seguintes comandos para testar a interpretação de programas MONT
 <pre> python3 parse_monty.py example.mtp </pre>
 <pre> python3 parse_monty.py example_error.mtp </pre>
 
+Resultado: 
+> python3 parse_monty.py example.mtp               
+Declarando uma variável do tipo int com o nome x
+Atribuindo 10 a x durante a declaração
+Declarando uma variável do tipo float com o nome y
+Atribuindo 20.5 a y durante a declaração
+Atribuindo 11 a x
+Atribuindo 9.5 a y
+Print: 11
+Print: 9.5
+> python3 parse_monty.py example_error.mtp         
+Erro de Sintaxe na linha 5:7 - extraneous input '+' expecting {INT, FLOAT, ID, '(', '['}
+Erro de Sintaxe na linha 6:8 - mismatched input ';' expecting {INT, FLOAT, ID, '(', '['}
+Erro de Sintaxe na linha 7:8 - missing ')' at ';'
+Declarando uma variável do tipo int com o nome x
+Atribuindo 10.5 a x durante a declaração
+Declarando uma variável do tipo float com o nome y
+Atribuindo 20 a y durante a declaração
+Atribuindo 11.5 a x
+Atribuindo 20 a y
+Print: 11.5
 
+O projeto foi feito em Python com ANTLR
+
+
+The project was done with Python with ANTLR
+
+
+<img src="print.png" alt="page-home">
+
+<img src="print2.png" alt="page-home">
 🔧 Tecnologias utilizadas:
 ------------------
 
