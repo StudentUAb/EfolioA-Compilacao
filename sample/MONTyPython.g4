@@ -1,35 +1,5 @@
 grammar MONTyPython;
 
-// Tokens adicionais para tipos e palavras-chave
-INT_TYPE: 'int';
-FLOAT_TYPE: 'float';
-LIST_TYPE: 'list';
-FOR: 'for';
-WHILE: 'while';
-IF: 'if';
-ELSE: 'else';
-LBRACE: '{';
-RBRACE: '}';
-PRINT: 'print';
-
-// Definições léxicas
-INT: [0-9]+;
-FLOAT: [0-9]+'.'[0-9]+;
-ID: [a-zA-Z_][a-zA-Z_0-9]*;
-ASSIGN: '=';
-PLUS: '+';
-MINUS: '-';
-STAR: '*';
-SLASH: '/';
-LPAREN: '(';
-RPAREN: ')';
-LBRACK: '[';
-RBRACK: ']';
-COMMA: ',';
-SEMI: ';';
-WHITESPACE: [ \t\r\n]+ -> skip;
-COMMENT: '#' ~[\r\n]* -> skip;
-
 // Definições sintáticas
 program: (statement)+;
 
@@ -66,4 +36,35 @@ params: param (COMMA param)*;
 param: (INT_TYPE | FLOAT_TYPE) ID;
 
 printStatement: PRINT LPAREN expression RPAREN SEMI;
+
+// Tokens adicionais para tipos e palavras-chave
+INT_TYPE: 'int';
+FLOAT_TYPE: 'float';
+LIST_TYPE: 'list';
+FOR: 'for';
+WHILE: 'while';
+IF: 'if';
+ELSE: 'else';
+LBRACE: '{';
+RBRACE: '}';
+PRINT: 'print';
+
+// Definições léxicas
+INT: [0-9]+;
+FLOAT: [0-9]+'.'[0-9]+;
+ID: [a-zA-Z_][a-zA-Z_0-9]*;
+ASSIGN: '=';
+PLUS: '+';
+MINUS: '-';
+STAR: '*';
+SLASH: '/';
+LPAREN: '(';
+RPAREN: ')';
+LBRACK: '[';
+RBRACK: ']';
+COMMA: ',';
+SEMI: ';';
+WHITESPACE: [ \t\r\n]+ -> skip;
+COMMENT: '#' ~[\r\n]* -> skip;
+
 
